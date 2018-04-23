@@ -12,6 +12,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //TestUI();
+            TestSuggestions();
+        }
+
+        static void TestUI()
+        {
             CheckboxTableForm form = new CheckboxTableForm();
 
             var data = new List<SuggestedModification>
@@ -31,6 +37,35 @@ namespace ConsoleApp1
 
             Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
 
+        }
+
+        static void TestSuggestions()
+        {
+            CheckboxTableForm form = new CheckboxTableForm();
+
+            var data = new List<SuggestedModification>
+            {
+                URLInNameExt.SuggestModification("http://www.instagram.com", "Instagram", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://m.website.com", "website", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://www.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://account.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://accounts.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://signin.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://secure.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://auth.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://ssl.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://my.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://m.site.com", "", new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://login.site.com", "", new PwUuid(true))
+            };
+
+            form.AddData(data);
+
+            form.ShowDialog();
+
+            var changes = form.GetSuggestedModications();
+
+            Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
         }
     }
 }
