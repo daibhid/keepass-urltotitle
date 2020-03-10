@@ -1,31 +1,49 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLInName", "URLInName\URLInName.csproj", "{5764113A-4E17-4F98-9E37-4CE9F37A616F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLInNameUITest", "URLInNameUITest\URLInNameUITest.csproj", "{DF40287F-1816-4374-95D6-E495AA79BBD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Debug|x86.ActiveCfg = Debug|x86
 		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Debug|x86.Build.0 = Debug|x86
+		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Release|x86.ActiveCfg = Release|x86
 		{5764113A-4E17-4F98-9E37-4CE9F37A616F}.Release|x86.Build.0 = Release|x86
+		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Debug|x86.ActiveCfg = Debug|x86
 		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Debug|x86.Build.0 = Debug|x86
+		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Release|x86.ActiveCfg = Release|x86
 		{DF40287F-1816-4374-95D6-E495AA79BBD9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2561C75-F2C3-4B8A-9B31-5986C8921947}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None
 		$1.ResourceNamePolicy = FileFormatDefault
-		$0.TextStylePolicy = $2
+		$0.TextStylePolicy = $4
 		$2.inheritsSet = VisualStudio
 		$2.inheritsScope = text/plain
 		$2.scope = text/x-csharp
@@ -57,7 +75,6 @@ Global
 		$3.inheritsSet = Mono
 		$3.inheritsScope = text/x-csharp
 		$3.scope = text/x-csharp
-		$0.TextStylePolicy = $4
 		$4.inheritsSet = VisualStudio
 		$4.inheritsScope = text/plain
 		$4.scope = text/plain
