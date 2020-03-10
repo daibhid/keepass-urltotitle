@@ -1,11 +1,11 @@
-namespace URLInName
+﻿namespace URLInName
 {
-using System;
+    using System;
     using System.Collections.Generic;
-using System.Windows.Forms;
-using KeePass.Plugins;
-using KeePass.Resources;
-using KeePassLib;
+    using System.Windows.Forms;
+    using KeePass.Plugins;
+    using KeePass.Resources;
+    using KeePassLib;
 
     public sealed class URLInNameExt : Plugin
     {
@@ -59,7 +59,7 @@ using KeePassLib;
                 {
                     ////logger.Log(string.Format("For URL:{0}, exception:{1}", entryURL, ex.ToString()));
                 }
-                }
+            }
 
             CheckboxTableForm changes_form = new CheckboxTableForm();
             changes_form.AddData(suggestedModifications);
@@ -92,7 +92,10 @@ using KeePassLib;
                 .RemoveStart("ssl.")
                 .RemoveStart("my.")
                 .RemoveStart("m.")
-                .RemoveStart("login.");
+                .RemoveStart("login.")
+                .RemoveStart("support.")
+                .RemoveStart("forums.")
+                .RemoveStart("signup.");
             string suggestUrl = asUri.GetLeftPart(UriPartial.Authority);
 
             if (!string.Equals(name, suggestedName) || !string.Equals(url, suggestUrl))

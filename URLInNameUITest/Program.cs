@@ -1,9 +1,9 @@
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
-using System;
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
     using KeePassLib;
-using URLInName;
+    using URLInName;
 
     class Program
     {
@@ -53,6 +53,9 @@ using URLInName;
                 URLInNameExt.SuggestModification("http://my.site.com", string.Empty, new PwUuid(true)),
                 URLInNameExt.SuggestModification("http://m.site.com", string.Empty, new PwUuid(true)),
                 URLInNameExt.SuggestModification("http://login.site.com", string.Empty, new PwUuid(true)),
+
+                URLInNameExt.SuggestModification("http://login.site.com/", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://login.site.com/auth/html.com/https://login.site.com", string.Empty, new PwUuid(true)),
             };
 
             form.AddData(data);
