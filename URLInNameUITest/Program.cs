@@ -1,13 +1,10 @@
-﻿using KeePassLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using URLInName;
-
 namespace ConsoleApp1
 {
+using System;
+using System.Collections.Generic;
+    using KeePassLib;
+using URLInName;
+
     class Program
     {
         static void Main(string[] args)
@@ -20,50 +17,49 @@ namespace ConsoleApp1
         {
             CheckboxTableForm form = new CheckboxTableForm();
 
-            var data = new List<SuggestedModification>
+            List<SuggestedModification> data = new List<SuggestedModification>
             {
-                new SuggestedModification(){ NewTitle = "newtitle", OldTitle = "oldtitle", OldUrl = "url", suggestedUrl = "newurl", Uuid = new PwUuid(true) },
-                new SuggestedModification(){ NewTitle = "newtitle2", OldTitle = "oldtitle2", OldUrl = "url2", suggestedUrl = "newurl2", Uuid = new PwUuid(true) },
-                new SuggestedModification(){ NewTitle = "oldtitle3", OldTitle = "oldtitle3", OldUrl = "url3", suggestedUrl = "newurl3", Uuid = new PwUuid(true) },
-                new SuggestedModification(){ NewTitle = "newtitle4", OldTitle = "oldtitle4", OldUrl = "url4", suggestedUrl = "url4", Uuid = new PwUuid(true) },
-                new SuggestedModification(){ NewTitle = "oldtitle5", OldTitle = "oldtitle5", OldUrl = "url5", suggestedUrl = "url5", Uuid = new PwUuid(true) }
+                new SuggestedModification() { NewTitle = "newtitle", OldTitle = "oldtitle", OldUrl = "url", suggestedUrl = "newurl", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "newtitle2", OldTitle = "oldtitle2", OldUrl = "url2", suggestedUrl = "newurl2", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "oldtitle3", OldTitle = "oldtitle3", OldUrl = "url3", suggestedUrl = "newurl3", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "newtitle4", OldTitle = "oldtitle4", OldUrl = "url4", suggestedUrl = "url4", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "oldtitle5", OldTitle = "oldtitle5", OldUrl = "url5", suggestedUrl = "url5", Uuid = new PwUuid(true) },
             };
 
             form.AddData(data);
 
             form.ShowDialog();
 
-            var changes = form.GetSuggestedModications();
+            List<SuggestedModification> changes = form.GetSuggestedModications();
 
             Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
-
         }
 
         static void TestSuggestions()
         {
             CheckboxTableForm form = new CheckboxTableForm();
 
-            var data = new List<SuggestedModification>
+            List<SuggestedModification> data = new List<SuggestedModification>
             {
                 URLInNameExt.SuggestModification("http://www.instagram.com", "Instagram", new PwUuid(true)),
                 URLInNameExt.SuggestModification("http://m.website.com", "website", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://www.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://account.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://accounts.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://signin.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://secure.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://auth.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://ssl.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://my.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://m.site.com", "", new PwUuid(true)),
-                URLInNameExt.SuggestModification("http://login.site.com", "", new PwUuid(true))
+                URLInNameExt.SuggestModification("http://www.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://account.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://accounts.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://signin.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://secure.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://auth.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://ssl.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://my.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://m.site.com", string.Empty, new PwUuid(true)),
+                URLInNameExt.SuggestModification("http://login.site.com", string.Empty, new PwUuid(true)),
             };
 
             form.AddData(data);
 
             form.ShowDialog();
 
-            var changes = form.GetSuggestedModications();
+            List<SuggestedModification> changes = form.GetSuggestedModications();
 
             Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
         }
