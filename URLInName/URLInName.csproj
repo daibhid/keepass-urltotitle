@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,7 +56,9 @@
     <Compile Include="URLInNameExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="CheckboxTableForm.cs" />
+    <Compile Include="CheckboxTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CheckboxTableForm.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Form1.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CheckboxTableForm.resx">
+      <DependentUpon>CheckboxTableForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="KeePass">
