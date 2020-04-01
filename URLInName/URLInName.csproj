@@ -52,6 +52,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\keepass-targets\KeePass.targets" />
   <ItemGroup>
     <Compile Include="URLInNameExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

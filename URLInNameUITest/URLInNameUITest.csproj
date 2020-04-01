@@ -71,5 +71,4 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="..\keepass-targets\KeePass.Empty.targets" />
-  <Import Project="..\keepass-targets\KeePass.targets" />
 </Project>
