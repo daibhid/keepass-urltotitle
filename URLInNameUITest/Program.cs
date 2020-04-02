@@ -1,41 +1,59 @@
-﻿namespace ConsoleApp1
+﻿// <copyright file="Program.cs" company="daibhid">
+// Copyright (c) daibhid. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace ConsoleApp1
 {
     using System;
     using System.Collections.Generic;
     using KeePassLib;
     using URLInName;
 
-    class Program
+    /// <summary>
+    /// Test application to show the UI for testing.
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Main which shows the UI.
+        /// </summary>
+        /// <param name="args">Arguments ignored.</param>
+        internal static void Main(string[] args)
         {
-            //TestUI();
+            ////TestUI();
             TestSuggestions();
         }
 
-        static void TestUI()
+        /// <summary>
+        /// Test the UI by displaying UI (does no inputu suggestions.)
+        /// </summary>
+        internal static void TestUI()
         {
             CheckboxTableForm form = new CheckboxTableForm();
 
             List<SuggestedModification> data = new List<SuggestedModification>
             {
-                new SuggestedModification() { NewTitle = "newtitle", OldTitle = "oldtitle", OldUrl = "url", suggestedUrl = "newurl", Uuid = new PwUuid(true) },
-                new SuggestedModification() { NewTitle = "newtitle2", OldTitle = "oldtitle2", OldUrl = "url2", suggestedUrl = "newurl2", Uuid = new PwUuid(true) },
-                new SuggestedModification() { NewTitle = "oldtitle3", OldTitle = "oldtitle3", OldUrl = "url3", suggestedUrl = "newurl3", Uuid = new PwUuid(true) },
-                new SuggestedModification() { NewTitle = "newtitle4", OldTitle = "oldtitle4", OldUrl = "url4", suggestedUrl = "url4", Uuid = new PwUuid(true) },
-                new SuggestedModification() { NewTitle = "oldtitle5", OldTitle = "oldtitle5", OldUrl = "url5", suggestedUrl = "url5", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "newtitle", OldTitle = "oldtitle", OldUrl = "url", SuggestedUrl = "newurl", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "newtitle2", OldTitle = "oldtitle2", OldUrl = "url2", SuggestedUrl = "newurl2", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "oldtitle3", OldTitle = "oldtitle3", OldUrl = "url3", SuggestedUrl = "newurl3", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "newtitle4", OldTitle = "oldtitle4", OldUrl = "url4", SuggestedUrl = "url4", Uuid = new PwUuid(true) },
+                new SuggestedModification() { NewTitle = "oldtitle5", OldTitle = "oldtitle5", OldUrl = "url5", SuggestedUrl = "url5", Uuid = new PwUuid(true) },
             };
 
             form.AddData(data);
 
             form.ShowDialog();
 
-            List<SuggestedModification> changes = form.GetSuggestedModications();
+            List<SuggestedModification> changes = form.SuggestedModifications;
 
             Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
         }
 
-        static void TestSuggestions()
+        /// <summary>
+        /// Test the suggestion algorithm, by running a fex examples.
+        /// </summary>
+        internal static void TestSuggestions()
         {
             CheckboxTableForm form = new CheckboxTableForm();
 
@@ -56,13 +74,15 @@
 
                 URLInNameExt.SuggestModification("http://login.site.com/", string.Empty, new PwUuid(true)),
                 URLInNameExt.SuggestModification("http://login.site.com/auth/html.com/https://login.site.com", string.Empty, new PwUuid(true)),
+
+                URLInNameExt.SuggestModification("twitch.tv", string.Empty, new PwUuid(true)),
             };
 
             form.AddData(data);
 
             form.ShowDialog();
 
-            List<SuggestedModification> changes = form.GetSuggestedModications();
+            List<SuggestedModification> changes = form.SuggestedModifications;
 
             Console.WriteLine(string.Format("{0} checked modifications", changes.Count));
         }
