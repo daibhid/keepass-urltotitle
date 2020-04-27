@@ -101,6 +101,11 @@ namespace URLInName
         /// <param name="e">The <see cref="EventArgs"/>.</param>
         private void okBtn_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void FormClosedEvent(object sender, FormClosedEventArgs e)
+        {
             foreach (DataGridViewRow row in this.dataGridView1.Rows)
             {
                 if (!(bool)row.Cells[0].Value)
@@ -108,8 +113,6 @@ namespace URLInName
                     this.SuggestedModifications.RemoveAll(item => ((PwUuid)row.Cells[5].Value).CompareTo(item.Uuid) == 0);
                 }
             }
-
-            this.Close();
         }
     }
 }

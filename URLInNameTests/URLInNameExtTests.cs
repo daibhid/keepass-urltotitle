@@ -7,9 +7,15 @@ namespace URLInName.Tests
 {
     using NUnit.Framework;
 
+    /// <summary>
+    /// Test the <see cref="URLInNameExt"/> class.
+    /// </summary>
     [TestFixture]
     public class URLInNameExtTests
     {
+        /// <summary>
+        /// Test the <see cref="URLInNameExt.SuggestModification(string, string, KeePassLib.PwUuid)"/> method.
+        /// </summary>
         [Test]
         public void SuggestModificationTest()
         {

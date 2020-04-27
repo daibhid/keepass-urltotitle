@@ -61,7 +61,9 @@
     <Compile Include="CheckboxTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckboxTableForm.Designer.cs" />
+    <Compile Include="CheckboxTableForm.Designer.cs">
+      <DependentUpon>CheckboxTableForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />
@@ -73,7 +75,6 @@
     <AdditionalFiles Include="..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
-    <None Include="Form1.resx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CheckboxTableForm.resx">
