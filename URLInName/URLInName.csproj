@@ -7,7 +7,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>URLInName</RootNamespace>
     <AssemblyName>URLInName</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>5</LangVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -83,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="KeePass">
-      <Version>2.44.0.30973</Version>
+      <Version>2.47.0.22308</Version>
     </PackageReference>
     <PackageReference Include="StyleCop.Analyzers">
       <Version>1.1.118</Version>

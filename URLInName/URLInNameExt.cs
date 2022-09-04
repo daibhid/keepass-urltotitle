@@ -125,7 +125,11 @@ namespace URLInName
             {
                 return new SuggestedModification()
                 {
-                    NewTitle = suggestedName, OldTitle = name, OldUrl = url, SuggestedUrl = suggestUrl, Uuid = uuid,
+                    NewTitle = suggestedName,
+                    OldTitle = name,
+                    OldUrl = url,
+                    SuggestedUrl = suggestUrl,
+                    Uuid = uuid,
                 };
             }
             else
