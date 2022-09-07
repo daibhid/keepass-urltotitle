@@ -1,4 +1,4 @@
-﻿namespace URLInName
+namespace URLInName
 {
     partial class CheckboxTableForm
     {
