@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="BuildPlgxFile" >
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -6,9 +6,8 @@
     <LangVersion>5</LangVersion>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GeneratePlgx>true</GeneratePlgx>
+    <Product>KeePass Plugin</Product>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">
@@ -19,11 +18,14 @@
     <PackageReference Include="KeePass">
       <Version>2.51.1.21987</Version>
     </PackageReference>
+    <PackageReference Include="PlgxBuildTasks" Version="1.1.2-beta">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="StyleCop.Analyzers">
       <Version>1.1.118</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <Import Project="..\keepass-targets\KeePass.targets" />
 </Project>
