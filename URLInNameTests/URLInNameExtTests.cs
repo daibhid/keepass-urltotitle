@@ -6,6 +6,7 @@
 namespace URLInName.Tests
 {
     using NUnit.Framework;
+    using static URLInName.URLInNameExt;
 
     /// <summary>
     /// Test the <see cref="URLInNameExt"/> class.

@@ -9,6 +9,7 @@ namespace ConsoleApp1
     using System.Collections.Generic;
     using KeePassLib;
     using URLInName;
+    using static URLInName.URLInNameExt;
 
     /// <summary>
     /// Test application to show the UI for testing.

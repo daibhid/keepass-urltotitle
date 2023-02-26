@@ -63,8 +63,8 @@ namespace URLInName
 
             foreach (PwEntry i in this.host.Database.RootGroup.GetEntries(true))
             {
-                string entryName = i.Strings.Get(KPRes.Title).ReadString();
-                string entryURL = i.Strings.Get(KPRes.Url).ReadString();
+                string entryName = i.Strings.Get(KPRes.Title).ReadStringOrEmpty();
+                string entryURL = i.Strings.Get(KPRes.Url).ReadStringOrEmpty();
 
                 try
                 {
@@ -137,36 +137,36 @@ namespace URLInName
                 throw new Exception(string.Format("Skipping entry with name: {0} and url: {1}", name, url));
             }
         }
-    }
-
-    /// <summary>
-    /// A struct holding the old values, and new suggested values, for displaying in the UI.
-    /// </summary>
-    public struct SuggestedModification
-    {
-        /// <summary>
-        /// The previous entry Title.
-        /// </summary>
-        public string OldTitle;
 
         /// <summary>
-        /// The new suggested title.
+        /// A struct holding the old values, and new suggested values, for displaying in the UI.
         /// </summary>
-        public string NewTitle;
+        public struct SuggestedModification
+        {
+            /// <summary>
+            /// The previous entry Title.
+            /// </summary>
+            public string OldTitle;
 
-        /// <summary>
-        /// The previous entry URL.
-        /// </summary>
-        public string OldUrl;
+            /// <summary>
+            /// The new suggested title.
+            /// </summary>
+            public string NewTitle;
 
-        /// <summary>
-        /// The new suggested URL.
-        /// </summary>
-        public string SuggestedUrl;
+            /// <summary>
+            /// The previous entry URL.
+            /// </summary>
+            public string OldUrl;
 
-        /// <summary>
-        /// The UUID of the entry to reassociate later.
-        /// </summary>
-        public PwUuid Uuid;
+            /// <summary>
+            /// The new suggested URL.
+            /// </summary>
+            public string SuggestedUrl;
+
+            /// <summary>
+            /// The UUID of the entry to reassociate later.
+            /// </summary>
+            public PwUuid Uuid;
+        }
     }
 }

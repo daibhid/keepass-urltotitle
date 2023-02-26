@@ -6,6 +6,7 @@
 namespace URLInName
 {
     using System.Drawing;
+    using KeePassLib.Security;
 
     /// <summary>
     /// Extension methods for the plugin.
@@ -37,6 +38,23 @@ namespace URLInName
             else
             {
                 return source;
+            }
+        }
+
+        /// <summary>
+        /// Returns the string value of a <see cref="ProtectedString" /> or an empty string if it is null.
+        /// </summary>
+        /// <param name="protectedString">The string to check.</param>
+        /// <returns>A string value of the <see cref="ProtectedString" />, or an empty string if it is null.</returns>
+        public static string ReadStringOrEmpty(this ProtectedString protectedString)
+        {
+            if (protectedString == null)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return protectedString.ReadString();
             }
         }
     }

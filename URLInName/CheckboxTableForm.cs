@@ -26,19 +26,19 @@ namespace URLInName
         /// <summary>
         /// Gets or sets the list of potential modifications.
         /// </summary>
-        public List<SuggestedModification> SuggestedModifications { get; set; }
+        public List<URLInNameExt.SuggestedModification> SuggestedModifications { get; set; }
 
         /// <summary>
         /// Method to populate some suggestions in the UI.
         /// </summary>
         /// <param name="data">The new suggestions to show.</param>
-        public void AddData(List<SuggestedModification> data)
+        public void AddData(List<URLInNameExt.SuggestedModification> data)
         {
             this.dataGridView1.Rows.Clear();
 
             this.SuggestedModifications = data;
 
-            foreach (SuggestedModification item in data)
+            foreach (URLInNameExt.SuggestedModification item in data)
             {
                 int index = this.dataGridView1.Rows.Add(new object[] { false, item.OldTitle, item.NewTitle, item.OldUrl, item.SuggestedUrl, item.Uuid });
 

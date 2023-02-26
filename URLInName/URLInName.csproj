@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -8,6 +8,9 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <GeneratePlgx>true</GeneratePlgx>
     <Product>KeePass Plugin</Product>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">
@@ -16,7 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="KeePass">
-      <Version>2.51.1.21987</Version>
+      <Version>2.53.0.21099</Version>
     </PackageReference>
     <PackageReference Include="PlgxBuildTasks" Version="1.1.2-beta">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
